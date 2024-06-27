@@ -22,7 +22,14 @@
   overflow: hidden;
   margin:0 auto;
 }
-
+.icon{
+  color: violet;
+  width: 24px;
+  height: 24px;
+  &:hover{
+    color:black;
+  }
+}
 .img{
   width: 100%;
   height: 100%;
