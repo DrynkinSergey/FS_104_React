@@ -1,0 +1,45 @@
+.wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.userCard{
+  width: 600px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 4px 4px gray;
+  padding: 20px;
+ 
+  @media screen and (min-width: 768px){
+    background-color: green;
+  }
+}
+.imageWrapper{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 4px solid green;
+  overflow: hidden;
+  margin:0 auto;
+}
+
+.img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.content{
+  display: flex;
+  gap:10px;
+  flex-direction: column;
+  h2{
+    text-align: center;
+  }
+}
+
+.red{
+  color:red;
+}
+.green{
+  color:green;
+}

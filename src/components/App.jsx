@@ -1,25 +1,28 @@
 import Footer from './Footer/Footer';
 import Header from './Header/Header';
-import Message from './Message/Message';
-import '../index.css';
+import Profile from './Profile/Profile';
+import profileData from '../assets/user.json';
+import s from './App.module.css';
+import clsx from 'clsx';
 const App = () => {
-  const message = 'Hello';
   const fruits = ['banana', 'apple', 'lemon', 'peach'];
   return (
     <>
       <Header />
       <h2 className='title'>Hello styles</h2>
-      <Message author='Petro' message='Продам холодильник' />
-      <Message author='Stepan' message={message} />
-      <Message author='Olena' />
-      <Message author='Ally' message='Привіт' />
-
+      <Profile user={profileData} />
       <ul>
         {fruits.map(item => (
           <li key={item}>{item}</li>
         ))}
       </ul>
       <Footer />
+      <div className={s.wrapper}>
+        <div className={clsx(s.box)}></div>
+        <div className={clsx(s.red)}></div>
+        <div className={clsx(s.black)}></div>
+        <div className={clsx(s.box)}></div>
+      </div>
     </>
   );
 };
