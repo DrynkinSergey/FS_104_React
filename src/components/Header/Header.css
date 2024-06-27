@@ -1,0 +1,11 @@
+.header{
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  background-color: teal;
+  padding: 20px;
+}
+.logo{
+  font-style: italic;
+  font-weight: 700;
+}

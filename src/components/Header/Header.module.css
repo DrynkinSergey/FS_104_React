@@ -1,0 +1,15 @@
+.header{
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  background-color: teal;
+  padding: 20px;
+}
+.logo{
+  font-style: italic;
+  font-weight: 700;
+  color: var(--color-red);
+}
+.title{
+  color:rgb(130, 4, 117);
+}
