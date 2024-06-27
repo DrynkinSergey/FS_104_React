@@ -4,6 +4,7 @@ import Profile from './Profile/Profile';
 import profileData from '../assets/user.json';
 import s from './App.module.css';
 import clsx from 'clsx';
+import Modal from './Modal/Modal';
 const App = () => {
   const fruits = ['banana', 'apple', 'lemon', 'peach'];
   return (
@@ -23,6 +24,13 @@ const App = () => {
         <div className={clsx(s.black)}></div>
         <div className={clsx(s.box)}></div>
       </div>
+      <Modal>
+        <p>Hello</p>
+      </Modal>
+      <Modal>
+        <p>Продам холодильник</p>
+        <img src='https://whirlpool-store.com.ua/10451-tm_large_default/kholodilnik-whirlpool-w7x-82o-ox-h.jpg' />
+      </Modal>
     </>
   );
 };
