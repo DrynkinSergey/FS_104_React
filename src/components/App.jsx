@@ -5,8 +5,8 @@ export const App = () => {
   return (
     <>
       {/* <Counter /> */}
-      {/* <TodoList /> */}
-      <ColorPicker />
+      <TodoList />
+      {/* <ColorPicker /> */}
     </>
   );
 };
