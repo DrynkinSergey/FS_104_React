@@ -5,18 +5,9 @@ export const Counter = () => {
   const [counter, setCounter] = useState(0);
 
   const handlePlusClick = () => {
-    // setCounter(counter + 1);
-    // setCounter(counter + 1); ❌❌❌
-    // setCounter(counter + 1);
-    if (counter >= 5) {
-      return alert('Sorry but not today!');
-    }
-    setCounter(prevState => prevState + 1); // 🔥
+    setCounter(prevState => prevState + 1);
   };
   const handleMinusClick = () => {
-    if (counter <= -5) {
-      return alert('You cant change counter less than 5');
-    }
     setCounter(prev => prev - 1);
   };
   const handleReset = () => {

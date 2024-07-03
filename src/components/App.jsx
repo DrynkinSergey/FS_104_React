@@ -4,8 +4,8 @@ import { TodoList } from './TodoList/TodoList';
 export const App = () => {
   return (
     <>
-      {/* <Counter /> */}
-      <TodoList />
+      <Counter />
+      {/* <TodoList /> */}
       {/* <ColorPicker /> */}
     </>
   );
