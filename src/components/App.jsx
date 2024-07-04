@@ -22,7 +22,7 @@ export const App = () => {
         </Modal>
       )}
 
-      {/* <TodoList /> */}
+      <TodoList />
       {/* <ColorPicker /> */}
     </>
   );
