@@ -3,6 +3,7 @@ import { ColorPicker } from './ColorPicker/ColorPicker';
 import { Counter } from './Counter/Counter';
 import Modal from './Modal/Modal';
 import { TodoList } from './TodoList/TodoList';
+import Vote from './Vote/Vote';
 export const App = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -22,7 +23,8 @@ export const App = () => {
         </Modal>
       )}
 
-      <TodoList />
+      {/* <TodoList /> */}
+      <Vote />
       {/* <ColorPicker /> */}
     </>
   );
