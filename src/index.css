@@ -69,3 +69,25 @@ img {
 		color: white;
 	}
 }
+
+.label{
+  display: flex;
+  gap:5px;
+  flex-direction: column;
+
+  span{
+    font-weight: bold;
+  }
+}
+.formWrapper{
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 40px;
+  box-shadow: 0 0 8px 5px lightskyblue;
+}
