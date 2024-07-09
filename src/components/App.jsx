@@ -1,9 +1,9 @@
-import UncontrolledForm from './Forms/UncontrolledForm';
+import ControlledForm from './Forms/ControlledForm';
 
 export const App = () => {
   return (
     <>
-      <UncontrolledForm />
+      <ControlledForm />
     </>
   );
 };
