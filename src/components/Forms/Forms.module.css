@@ -1,0 +1,26 @@
+.wrapper{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+  padding: 20px;
+  box-shadow: 0 0 8px 8px lightblue;
+}
+.input{
+  padding: 5px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 2px 4px lightgray;
+}
+.label{
+  display: flex;
+  flex-direction: column;
+  gap:5px;
+  & span{
+    font-weight: bold;
+  }
+}
