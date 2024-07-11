@@ -38,7 +38,6 @@ const ControlledForm = ({ register }) => {
 
   const handleChangeInput = e => {
     const { name, value } = e.target;
-
     if (name === 'agree') {
       return setFormData({ ...formData, agree: !formData.agree });
     }

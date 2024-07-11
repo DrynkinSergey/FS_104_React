@@ -1,5 +1,4 @@
-import ControlledForm from './Forms/ControlledForm';
-import ExampleForm from './useId/ExampleForm';
+import { UserForm } from './UserForm/UserForm';
 
 export const App = () => {
   const register = data => {
@@ -11,8 +10,7 @@ export const App = () => {
   };
   return (
     <>
-      <ControlledForm register={register} />
-      <ExampleForm />
+      <UserForm />
     </>
   );
 };
