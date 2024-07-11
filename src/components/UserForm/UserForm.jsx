@@ -6,7 +6,9 @@ export const UserForm = () => {
     name: Yup.string()
       .required('This field is required!')
       .min(3, 'Name must be more than 3 chars!')
-      .max(20, 'Name must be less than 20 chars'),
+      .max(20, 'Name must be less than 20 chars')
+      .matches(/^[a-zA-Z]+$/, 'Must be only chars!'),
+
     surname: Yup.string()
       .required('This field is required!')
       .min(3, 'surname must be more than 3 chars!')
@@ -16,6 +18,7 @@ export const UserForm = () => {
       .min(14, 'You must be more than 14 years!')
       .max(99, 'Wow so slow!'),
     role: Yup.string().oneOf(['admin', 'user']),
+    email: Yup.string().email('Email is not valid'),
   });
 
   const initialValues = {
