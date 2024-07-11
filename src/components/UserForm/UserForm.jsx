@@ -1,5 +1,5 @@
 import { Field, Form, Formik } from 'formik';
-
+import s from './UserForm.module.css';
 export const UserForm = () => {
   const initialValues = {
     name: '',
@@ -10,45 +10,46 @@ export const UserForm = () => {
     city: '',
     about: '',
   };
+
   const handleSubmit = (data, actions) => {
     console.log(data);
     actions.resetForm();
   };
 
   return (
-    <div>
+    <div className={s.formWrapper}>
       <Formik initialValues={initialValues} onSubmit={handleSubmit}>
-        <Form>
-          <label>
+        <Form className={s.form}>
+          <label className={s.label}>
             <span>Name:</span>
-            <Field name='name' />
+            <Field className={s.input} name='name' />
           </label>
-          <label>
+          <label className={s.label}>
             <span>Surname:</span>
-            <Field name='surname' />
+            <Field className={s.input} name='surname' />
           </label>
-          <label>
+          <label className={s.label}>
             <span>Age:</span>
-            <Field name='age' />
+            <Field className={s.input} name='age' />
           </label>
-          <label>
+          <label className={s.label}>
             <span>Email:</span>
-            <Field name='email' />
+            <Field className={s.input} name='email' />
           </label>
-          <label>
+          <label className={s.label}>
             <span>City:</span>
-            <Field name='city' />
+            <Field className={s.input} name='city' />
           </label>
-          <label>
+          <label className={s.label}>
             <span>Role</span>
-            <Field name='role' as='select'>
+            <Field className={s.input} name='role' as='select'>
               <option value='user'>User</option>
               <option value='admin'>Admin</option>
             </Field>
           </label>
-          <label>
+          <label className={s.label}>
             <span>About</span>
-            <Field as='textarea' name='about'></Field>
+            <Field className={s.input} as='textarea' name='about'></Field>
           </label>
           <button type='submit'>Create</button>
         </Form>
