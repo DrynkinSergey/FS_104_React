@@ -3,6 +3,8 @@ import List from './List/List';
 import { useState } from 'react';
 import { fetchNews } from '../services/api';
 import { SearchBar } from './SearchBar/SearchBar';
+import { Comment } from 'react-loader-spinner';
+import Loader from './Loader/Loader';
 
 export const App = () => {
   const [hits, setHits] = useState([]);
@@ -25,7 +27,7 @@ export const App = () => {
   return (
     <div>
       <SearchBar setQuery={setQuery} />
-      {isLoading && <h1>Loading data...</h1>}
+      {isLoading && <Loader />}
       <List items={hits} />
     </div>
   );
