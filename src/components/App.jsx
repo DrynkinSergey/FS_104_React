@@ -10,13 +10,14 @@ export const App = () => {
   const [query, setQuery] = useState('react');
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
+  const [page, setPage] = useState(0);
   useEffect(() => {
     const getData = async () => {
       try {
         setIsLoading(true);
         setIsError(false);
-        const response = await fetchNews(query, 25);
-        setHits(response.hits);
+        const response = await fetchNews(query, page);
+        setHits(prev => [...prev, ...response.hits]);
       } catch (error) {
         console.log(error);
         setIsError(true);
@@ -25,13 +26,14 @@ export const App = () => {
       }
     };
     getData();
-  }, [query]);
+  }, [query, page]);
   return (
     <div>
       <SearchBar setQuery={setQuery} />
       {isLoading && <Loader />}
       {isError && <h2>Something went wrong! Try again...</h2>}
       <List items={hits} />
+      <button onClick={() => setPage(prev => prev + 1)}>Load more</button>
     </div>
   );
 };
