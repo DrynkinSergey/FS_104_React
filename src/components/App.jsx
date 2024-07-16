@@ -8,7 +8,7 @@ export const App = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await fetchNews('vue');
+        const response = await fetchNews('vue', 25);
         setHits(response.hits);
       } catch (error) {
         console.log(error);
