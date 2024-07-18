@@ -1,8 +1,12 @@
 import { Field, Form, Formik } from 'formik';
+import { useContext } from 'react';
+import { authContext } from '../../context/ContextProvider';
 
 export const AuthForm = () => {
+  const { login } = useContext(authContext);
   const handleSubmit = (values, options) => {
     console.log(values);
+    login(values);
     options.resetForm();
   };
   const initalValues = {

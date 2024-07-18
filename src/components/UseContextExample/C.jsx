@@ -7,7 +7,7 @@ export const C = ({ auto }) => {
     <div>
       <h1>Hello</h1>
       <h2>
-        {auto} {context.model}
+        {auto} {context.model} {context.engine}
       </h2>
     </div>
   );
