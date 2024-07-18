@@ -8,8 +8,8 @@ export const App = () => {
     <>
       <Header />
       <h1>HOOKS</h1>
-      <UseMemoExample />
-      {/* <UseRefExample /> */}
+      {/* <UseMemoExample /> */}
+      <UseRefExample />
       {/* <UseContextExample /> */}
     </>
   );
