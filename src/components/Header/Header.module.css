@@ -1,0 +1,11 @@
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: teal;
+  color:white;
+  font-size: 24px;
+  font-weight: 700;
+  border-bottom: 1px solid #e8e8e8;
+}

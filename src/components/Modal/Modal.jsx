@@ -3,7 +3,6 @@ import s from './Modal.module.css';
 const Modal = ({ children, onClose, title = 'Default modal' }) => {
   useEffect(() => {
     const handleKeyDown = e => {
-      console.log(e.key);
       if (e.key === 'Escape') {
         onClose();
       }
@@ -11,19 +10,8 @@ const Modal = ({ children, onClose, title = 'Default modal' }) => {
 
     document.addEventListener('keydown', handleKeyDown);
 
-    console.log('Модальне вікно відмалювалось!');
-    const intervalID = setInterval(() => {
-      console.log(new Date().toLocaleTimeString());
-    }, 1000);
-    const timeoutID = setTimeout(() => {
-      console.log('Badabum!!!🔥');
-    }, 3000);
-
     return () => {
-      console.log('Модалка закрилась!');
       document.removeEventListener('keydown', handleKeyDown);
-      clearInterval(intervalID);
-      clearTimeout(timeoutID);
     };
   }, [onClose]);
 
