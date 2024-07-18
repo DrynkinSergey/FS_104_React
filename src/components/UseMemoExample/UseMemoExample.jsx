@@ -1,12 +1,19 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 
 export const UseMemoExample = () => {
   const [a, setA] = useState(0);
   const [b, setB] = useState(0);
   const [c, setC] = useState(0);
 
-  console.log('Calc value a + b');
-  const result = a + b;
+  // a, b, c - state
+
+  // a, b - result
+
+  // const result = a + b;
+  const result = useMemo(() => {
+    console.log('Calc value a + b');
+    return a + b;
+  }, [a, b]);
 
   return (
     <div>
