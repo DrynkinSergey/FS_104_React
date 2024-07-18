@@ -9,6 +9,15 @@ export const UseMemoExample = () => {
 
   // a, b - result
 
+  const calcResult = useMemo(() => {
+    console.log('Calc start');
+    for (let i = 0; i < 1_000_000_000; i++) {}
+    console.log('CALC END');
+    return c * c;
+  }, [c]);
+
+  const resultCalc = calcResult;
+
   // const result = a + b;
   const result = useMemo(() => {
     console.log('Calc value a + b');
