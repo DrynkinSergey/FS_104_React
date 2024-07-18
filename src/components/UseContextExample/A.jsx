@@ -1,9 +1,9 @@
 import { B } from './B';
 
-export const A = () => {
+export const A = ({ auto }) => {
   return (
     <div>
-      <B />
+      <B auto={auto} />
     </div>
   );
 };

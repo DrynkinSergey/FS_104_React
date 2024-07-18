@@ -4,13 +4,14 @@ import { UseMemoExample } from './UseMemoExample/UseMemoExample';
 import { UseRefExample } from './UseRefExample/UseRefExample';
 
 export const App = () => {
+  const auto = 'Audi';
   return (
     <>
       <Header />
       <h1>HOOKS</h1>
       {/* <UseMemoExample /> */}
-      <UseRefExample />
-      {/* <UseContextExample /> */}
+      {/* <UseRefExample /> */}
+      <UseContextExample auto={auto} />
     </>
   );
 };
