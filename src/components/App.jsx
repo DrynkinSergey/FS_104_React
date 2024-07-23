@@ -5,6 +5,7 @@ import About from '../pages/About/About';
 import NotFound from '../pages/NotFound/NotFound';
 import Users from '../pages/Users/Users';
 import UserDetails from '../pages/UserDetails/UserDetails';
+import UserPosts from './UserPosts/UserPosts';
 
 export const App = () => {
   return (
@@ -14,7 +15,12 @@ export const App = () => {
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
         <Route path='/users' element={<Users />} />
-        <Route path='/users/:userId' element={<UserDetails />} />
+
+        <Route path='/users/:userId' element={<UserDetails />}>
+          <Route path='address' element={<h2>User address</h2>} />
+          <Route path='posts' element={<UserPosts />} />
+        </Route>
+
         <Route path='*' element={<NotFound />} />
       </Routes>
     </div>
@@ -23,4 +29,4 @@ export const App = () => {
 
 // http://localhost:5173/users/1
 // http://localhost:5173/users/22
-// http://localhost:5173/users/233
+// http://localhost:5173/users/233/address
