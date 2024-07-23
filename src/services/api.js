@@ -10,3 +10,8 @@ export const fetchNews = async (query, page = 0, perPage = 5) => {
   });
   return response.data;
 };
+
+export const fetchUsers = async () => {
+  const response = await axios.get('https://dummyjson.com/users');
+  return response.data.users;
+};
