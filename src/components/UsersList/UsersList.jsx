@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import s from './UsersList.module.css';
 const UsersList = ({ users = [] }) => {
   return (
@@ -7,7 +8,9 @@ const UsersList = ({ users = [] }) => {
       <ul className={s.list}>
         {users.map(user => (
           <li key={user.id}>
-            {user.firstName} {user.lastName}
+            <Link to={user.id.toString()}>
+              {user.firstName} {user.lastName}
+            </Link>
           </li>
         ))}
       </ul>
