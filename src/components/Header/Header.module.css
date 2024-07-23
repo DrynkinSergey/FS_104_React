@@ -9,3 +9,17 @@
   font-weight: 700;
   border-bottom: 1px solid #e8e8e8;
 }
+.nav{
+  display: flex;
+  gap:20px;
+  list-style: none;
+}
+.link{
+  color:white;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.active{
+  color:black;
+}
