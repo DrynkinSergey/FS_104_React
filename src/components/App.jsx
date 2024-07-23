@@ -1,11 +1,14 @@
+import { Route, Routes } from 'react-router-dom';
 import { Header } from './Header/Header';
-import UsersList from './UsersList/UsersList';
 
 export const App = () => {
   return (
     <div>
       <Header />
-      <UsersList />
+      <Routes>
+        <Route path='/' element={<h1>Home page</h1>} />
+        <Route path='/about' element={<h1>About page</h1>} />
+      </Routes>
     </div>
   );
 };
