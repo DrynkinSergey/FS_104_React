@@ -1,8 +1,14 @@
 .list{
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   padding: 20px;
   list-style: none;
   font-weight: 700;
   gap:10px;
+  & li{
+    display: flex;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+  }
 }
