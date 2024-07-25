@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { Suspense, useEffect, useRef, useState } from 'react';
 import { Link, NavLink, Outlet, useLocation, useNavigate, useParams } from 'react-router-dom';
 import { fetchUsersById } from '../../services/api';
 
@@ -10,10 +10,10 @@ const UserDetails = () => {
   const goBackRef = useRef(location?.state || '/users');
 
   useEffect(() => {
-    setTimeout(() => {
-      // Через 15 секунд, людину редіректить на сторінку users без її участі!
-      navigate('/users');
-    }, 15000);
+    // setTimeout(() => {
+    //   // Через 15 секунд, людину редіректить на сторінку users без її участі!
+    //   navigate('/users');
+    // }, 15000);
   }, [navigate]);
 
   useEffect(() => {
@@ -37,7 +37,9 @@ const UserDetails = () => {
         <NavLink to='address'>Address</NavLink>
         <NavLink to='posts'>Posts</NavLink>
       </div>
-      <Outlet />
+      <Suspense fallback={<h2>Second suspense loader</h2>}>
+        <Outlet />
+      </Suspense>
     </div>
   );
 };
