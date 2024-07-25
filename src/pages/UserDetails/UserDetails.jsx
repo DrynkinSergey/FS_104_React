@@ -1,13 +1,20 @@
 import { useEffect, useRef, useState } from 'react';
-import { Link, NavLink, Outlet, useLocation, useParams } from 'react-router-dom';
+import { Link, NavLink, Outlet, useLocation, useNavigate, useParams } from 'react-router-dom';
 import { fetchUsersById } from '../../services/api';
 
 const UserDetails = () => {
   const params = useParams();
   const [user, setUser] = useState(null);
-
+  const navigate = useNavigate();
   const location = useLocation();
   const goBackRef = useRef(location?.state || '/users');
+
+  useEffect(() => {
+    setTimeout(() => {
+      // Через 15 секунд, людину редіректить на сторінку users без її участі!
+      navigate('/users');
+    }, 15000);
+  }, [navigate]);
 
   useEffect(() => {
     fetchUsersById(params.userId).then(data => setUser(data));
