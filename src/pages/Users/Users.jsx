@@ -6,18 +6,21 @@ import { useSearchParams } from 'react-router-dom';
 
 const Users = () => {
   const [users, setUsers] = useState([]);
-  const [filterValue, setFilterValue] = useState('');
-
   const [searchParams, setSearchParams] = useSearchParams();
+  const filterValue = searchParams.get('query') ?? '';
 
   useEffect(() => {
     fetchUsers().then(data => setUsers(data));
   }, []);
 
   const handleChangeFilter = newValue => {
-    setFilterValue(newValue);
+    if (!newValue) {
+      // Очистка URL від некрасивого параметру
+      return setSearchParams({});
+    }
 
     searchParams.set('query', newValue);
+
     setSearchParams(searchParams);
   };
 
