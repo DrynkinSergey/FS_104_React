@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import { Header } from './Header/Header';
 import Home from '../pages/Home/Home';
 import About from '../pages/About/About';
@@ -21,7 +21,8 @@ export const App = () => {
           <Route path='posts' element={<UserPosts />} />
         </Route>
 
-        <Route path='*' element={<NotFound />} />
+        <Route path='*' element={<Navigate to='/' />} />
+        {/* <Route path='*' element={<NotFound />} /> */}
       </Routes>
     </div>
   );
