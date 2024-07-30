@@ -1,18 +1,24 @@
 import { useDispatch, useSelector } from 'react-redux';
 import s from './Counter.module.css';
+import { DECREMENT, INCREMENT, RESET } from '../../redux/counter/constants';
+import { selectCounter, selectStep } from '../../redux/counter/selectors';
 
 export const Counter = () => {
   // йде до редакс і отримує данні від нього
-  const counter = useSelector(state => state.counter.counter);
-  const step = useSelector(state => state.counter.step);
+  const counter = useSelector(selectCounter);
+  const step = useSelector(selectStep);
 
   const dispatch = useDispatch();
 
   const handlePlusClick = () => {
-    dispatch({ type: 'INCREMENT' });
+    dispatch({ type: INCREMENT });
   };
-  const handleMinusClick = () => {};
-  const handleResetClick = () => {};
+  const handleMinusClick = () => {
+    dispatch({ type: DECREMENT });
+  };
+  const handleResetClick = () => {
+    dispatch({ type: RESET });
+  };
   const handleChangeStep = e => {};
   return (
     <div className={s.flexContainer}>
