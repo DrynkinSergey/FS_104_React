@@ -1,4 +1,4 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import s from './Counter.module.css';
 
 export const Counter = () => {
@@ -6,7 +6,11 @@ export const Counter = () => {
   const counter = useSelector(state => state.counter.counter);
   const step = useSelector(state => state.counter.step);
 
-  const handlePlusClick = () => {};
+  const dispatch = useDispatch();
+
+  const handlePlusClick = () => {
+    dispatch({ type: 'INCREMENT' });
+  };
   const handleMinusClick = () => {};
   const handleResetClick = () => {};
   const handleChangeStep = e => {};
