@@ -1,10 +1,15 @@
+import { useDispatch, useSelector } from 'react-redux';
+import { selectTodos } from '../../redux/todos/selectors';
+
 export const List = () => {
+  const todos = useSelector(selectTodos);
+  const dispatch = useDispatch();
   return (
     <ul>
-      {[].map(item => (
+      {todos.map(item => (
         <li key={item.id}>
           <p>{item.todo}</p>
-          <button>Delete</button>
+          <button onClick={() => dispatch(item.id)}>Delete</button>
         </li>
       ))}
     </ul>
