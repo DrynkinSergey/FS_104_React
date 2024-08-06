@@ -28,3 +28,34 @@
     gap: 10px;
   }
 }
+.list{
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn{
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  padding: 5px 10px;
+  border: 2px solid black;
+  border-radius: 5px;
+  &:hover{
+    color: red;
+  }
+
+}
+.todo{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  list-style: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-shadow: 2px 2px 4px 4px lightgray;
+}
