@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { deleteTodoThunk, fetchTodosThunk, addTodoThunk } from './operations';
+import { deleteTodoThunk, fetchTodosThunk, addTodoThunk, toggleTodoThunk } from './operations';
 // 1.
 const initialState = {
   items: [],
@@ -29,6 +29,9 @@ const slice = createSlice({
       })
       .addCase(addTodoThunk.fulfilled, (state, action) => {
         state.items.push(action.payload);
+      })
+      .addCase(toggleTodoThunk.fulfilled, (state, action) => {
+        state.items = state.items.map(item => (item.id === action.payload ? { ...item, completed: !item.completed } : item));
       });
   },
 });
