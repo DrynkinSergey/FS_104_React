@@ -9,6 +9,12 @@
   padding: 20px;
 }
 
+.flex{
+  display: flex;
+  padding: 40px;
+  justify-content: center;
+  gap:10px;
+}
 
 .wrapperSearch{
   display: flex;
