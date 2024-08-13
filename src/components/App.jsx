@@ -1,18 +1,12 @@
-import { useDispatch } from 'react-redux';
-import AddForm from './AddForm/AddForm';
-import Posts from './Posts/Posts';
-import { useEffect } from 'react';
-import { fetchPosts } from '../redux/operations';
+import Header from './Header/Header';
+import { TodoList } from './TodoList/TodoList';
 
-export const App = () => {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchPosts());
-  }, [dispatch]);
+const App = () => {
   return (
-    <div>
-      <AddForm />
-      <Posts />
-    </div>
+    <>
+      <Header />
+      <TodoList />
+    </>
   );
 };
+export default App;
