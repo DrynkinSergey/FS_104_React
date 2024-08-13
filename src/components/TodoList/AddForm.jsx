@@ -5,17 +5,17 @@ import { addTodoThunk } from '../../redux/todos/operations';
 
 export const AddForm = () => {
   const dispatch = useDispatch();
-  const initialValues = { todo: '' };
+  const initialValues = { text: '' };
 
   const onSubmit = (values, options) => {
-    dispatch(addTodoThunk({ todo: values.todo }));
+    dispatch(addTodoThunk({ text: values.text }));
     options.resetForm();
   };
   return (
     <div className={s.addFormWrapper}>
       <Formik initialValues={initialValues} onSubmit={onSubmit}>
         <Form>
-          <Field className={s.input} name='todo' placeholder='Enter new todo' />
+          <Field className={s.input} name='text' placeholder='Enter new todo' />
           <button type='submit'>Add todo</button>
         </Form>
       </Formik>

@@ -9,7 +9,7 @@ export const List = () => {
   const uncompletedTodos = useSelector(selectUncompletedTodosMemo);
   const dispatch = useDispatch();
 
-  const filteredData = todos.filter(item => item.todo.toLowerCase().includes(filter.toLowerCase()));
+  const filteredData = todos.filter(item => item.text.toLowerCase().includes(filter.toLowerCase()));
   return (
     <div>
       <h2>Uncompleted: {uncompletedTodos}</h2>
@@ -18,7 +18,7 @@ export const List = () => {
           filteredData.map(item => (
             <li className={s.todo} key={item.id}>
               <input checked={item.completed} type='checkbox' onChange={() => dispatch(toggleTodoThunk(item))} />
-              <p>{item.todo}</p>
+              <p>{item.text}</p>
               <button className={s.btn} onClick={() => dispatch(deleteTodoThunk(item.id))}>
                 Delete
               </button>

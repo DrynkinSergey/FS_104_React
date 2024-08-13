@@ -1,5 +1,6 @@
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 import { deleteTodoThunk, fetchTodosThunk, addTodoThunk, toggleTodoThunk } from './operations';
+import { logoutThunk } from '../auth/operations';
 // 1.
 const initialState = {
   items: [],
@@ -29,6 +30,9 @@ const slice = createSlice({
 
       .addCase(addTodoThunk.fulfilled, (state, action) => {
         state.items.push(action.payload);
+      })
+      .addCase(logoutThunk.fulfilled, () => {
+        return initialState;
       })
 
       .addCase(toggleTodoThunk.fulfilled, (state, action) => {
