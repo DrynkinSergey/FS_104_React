@@ -6,8 +6,15 @@ import Login from '../pages/Login/Login';
 import Register from '../pages/Register/Register';
 import Tasks from '../pages/Tasks/Tasks';
 import NotFound from '../pages/NotFound/NotFound';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { getMeThunk } from '../redux/auth/operations';
 
 const App = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getMeThunk());
+  }, [dispatch]);
   return (
     <>
       <Routes>
