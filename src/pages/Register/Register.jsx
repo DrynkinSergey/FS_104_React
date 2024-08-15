@@ -2,7 +2,7 @@ import { Field, Form, Formik } from 'formik';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { registerThunk } from '../../redux/auth/operations';
-
+import s from './Register.module.css';
 const Register = () => {
   const dispatch = useDispatch();
   const initialValues = {
@@ -16,13 +16,15 @@ const Register = () => {
     options.resetForm();
   };
   return (
-    <div>
+    <div className={s.formWrapper}>
       <Formik initialValues={initialValues} onSubmit={handleSubmit}>
-        <Form>
-          <Field name='name' placeholder='Enter your name' />
-          <Field name='email' placeholder='Enter your email' />
-          <Field name='password' type='password' placeholder='Enter your password' />
-          <button type='submit'>Register</button>
+        <Form className={s.form}>
+          <Field className='input' name='name' placeholder='Enter your name' />
+          <Field className='input' name='email' placeholder='Enter your email' />
+          <Field className='input' name='password' type='password' placeholder='Enter your password' />
+          <button className='btn' type='submit'>
+            Register
+          </button>
 
           <p>
             You already have account?<Link to='/login'>Sign in</Link>

@@ -9,6 +9,12 @@ body {
   line-height: 1.5;
   font-size: 26px;
 }
+.input{
+  padding: 5px;
+  border-radius: 4px;
+  box-shadow: 2px 2px 4px 4px gray;
+  border: none;
+}
 
 h1,
 h2,

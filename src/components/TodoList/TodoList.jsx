@@ -5,10 +5,9 @@ import { SearchBar } from './SearchBar';
 import s from './TodoList.module.css';
 import { fetchTodosThunk } from '../../redux/todos/operations';
 import { useEffect } from 'react';
-import { selectIsError, selectIsLoading } from '../../redux/todos/selectors';
+import { selectIsError } from '../../redux/todos/selectors';
 import Filter from './Filter';
 export const TodoList = () => {
-  const isLoading = useSelector(selectIsLoading);
   const isError = useSelector(selectIsError);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -20,7 +19,6 @@ export const TodoList = () => {
       <SearchBar />
       <Filter />
       <List />
-      {isLoading && <h1>Loading...</h1>}
       {isError && <h2>Something went wrong!</h2>}
     </div>
   );

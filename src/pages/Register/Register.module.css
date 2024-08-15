@@ -1,0 +1,14 @@
+.formWrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.form{
+  display: flex;
+  gap:10px;
+  flex-direction: column;
+  padding: 20px 40px;
+  box-shadow: 0 0 8px 8px teal;
+}
